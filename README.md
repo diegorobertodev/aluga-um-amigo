@@ -1,6 +1,8 @@
-# Amigo por Perto
+# Laços por Perto
 
-Landing page de uma empresa fictícia de aluguer de companhia, em HTML, CSS e JavaScript puro. Formulário preparado para um webhook e chat preparado para um serviço RAG externo.
+Landing page de uma empresa fictícia de aluguer de companhia e representação social para ocasiões específicas, em HTML, CSS e JavaScript puro. Pode ser um pai, uma mãe, um irmão, uma namorada, um amigo ou outro papel, previamente combinado entre adultos, com consentimento e respeito.
+
+O formulário permite escolher o papel e a ocasião, com envio preparado para um webhook. O chat está preparado para um serviço RAG externo.
 
 ## Ficheiros
 
@@ -64,12 +66,13 @@ Envia um `POST` com `Content-Type: application/json` para `bookingWebhook`:
 {
   "name": "Pessoa de teste",
   "email": "teste@example.com",
-  "activity": "Café & conversa",
-  "message": "Gostava de combinar um café."
+  "role": "Pai",
+  "activity": "Formatura ou cerimónia",
+  "message": "Gostava de ter alguém a representar o meu pai durante a minha formatura."
 }
 ```
 
-O webhook deve devolver um código HTTP de sucesso (2xx). O corpo da resposta pode estar vazio. Em caso de erro, os dados permanecem no formulário para uma nova tentativa.
+O campo `role` indica o papel escolhido. O campo `activity` mantém o nome da integração anterior e passa a indicar a ocasião. O webhook deve devolver um código HTTP de sucesso (2xx). O corpo da resposta pode estar vazio. Em caso de erro, os dados permanecem no formulário para uma nova tentativa.
 
 ### Chat
 
@@ -85,7 +88,7 @@ O teu backend RAG deve devolver HTTP 2xx e este formato JSON:
 
 ```json
 {
-  "answer": "Escolhe uma atividade e envia o teu pedido pelo formulário."
+  "answer": "Escolhe o papel e a ocasião e envia o teu pedido pelo formulário."
 }
 ```
 

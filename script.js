@@ -1,5 +1,6 @@
 // Preenche os URLs HTTPS quando os teus serviços estiverem disponíveis.
-// O webhook recebe { name, email, activity, message }.
+// O webhook recebe { name, email, role, activity, message }.
+// role identifica o papel escolhido; activity identifica a ocasião.
 // O chat recebe { message } e deve devolver { answer: "texto da resposta" }.
 // Os serviços devem permitir CORS para o domínio do site.
 // Este ficheiro é público: não coloques aqui tokens ou chaves secretas.
@@ -27,7 +28,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
 const greeting = messages.querySelector(".msg");
 if (greeting) {
   greeting.textContent = CONFIG.chatEndpoint
-    ? "Olá! 👋 Em que posso ajudar?"
+    ? "Olá! 👋 Que companhia procuras para a tua ocasião?"
     : "Olá! 👋 Este chat é uma demonstração. O apoio ainda não está disponível.";
 }
 
