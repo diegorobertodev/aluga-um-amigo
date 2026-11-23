@@ -1,36 +1,149 @@
 <!doctype html>
 <html lang="pt-PT">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#fff9f1">
-<meta name="description" content="Companhia à tua medida: encontra alguém para um café, passeio ou conversa.">
-<title>Amigo por Perto — Boa companhia, sem complicações</title>
-<style>
-:root{--ink:#26362f;--green:#285c47;--cream:#fff9f1;--lime:#e1f0ce;--orange:#ffb87d;--muted:#66756c}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:var(--cream);line-height:1.55}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button{cursor:pointer}.wrap{width:min(1100px,90%);margin:auto}.nav{display:flex;align-items:center;justify-content:space-between;padding:24px 0}.logo{font-size:1.35rem;font-weight:850;letter-spacing:-.04em}.logo span{color:#d47b4e}.links{display:flex;gap:28px;align-items:center}.links a{font-weight:650;font-size:.92rem}.btn{border:0;border-radius:100px;background:var(--green);color:white;padding:14px 24px;font-weight:750;display:inline-flex;align-items:center;justify-content:center;transition:transform .2s,opacity .2s}.btn:hover{transform:translateY(-2px);opacity:.92}.btn.alt{background:white;color:var(--green)}.hero{padding:60px 0 100px;display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}.eyebrow{text-transform:uppercase;letter-spacing:.17em;font-size:.74rem;font-weight:850;color:#587961}.hero h1{font-size:clamp(3.4rem,6vw,6rem);line-height:1.04;letter-spacing:-.065em;margin:15px 0 24px}.hero h1 em{font-style:normal;color:var(--green)}.hero p{font-size:1.15rem;color:var(--muted);max-width:490px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.note{font-size:.82rem!important;margin-top:24px}.art{position:relative;min-height:460px;border-radius:45% 45% 34% 34%;background:#e5eed7;display:flex;align-items:center;justify-content:center;overflow:hidden}.art .emoji{font-size:clamp(9rem,19vw,15rem);transform:rotate(-8deg);filter:drop-shadow(0 18px 15px #56734b25)}.bubble{position:absolute;background:white;padding:13px 20px;border-radius:20px;box-shadow:0 12px 40px #304c3420;font-weight:750;font-size:.9rem}.bubble.one{top:18%;left:4%}.bubble.two{bottom:15%;right:3%}.section{padding:85px 0}.section h2{font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-.05em;line-height:1.1;margin:12px 0 18px}.section-intro{max-width:590px;color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px}.card{background:white;padding:30px;border-radius:25px;border:1px solid #e8e9df}.card .icon{font-size:2.5rem}.card h3{font-size:1.3rem;margin:15px 0 8px}.card p{color:var(--muted);margin:0}.how{background:var(--lime)}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:38px}.step strong{font-size:2.5rem;color:#73956e}.step h3{margin:8px 0}.step p{color:#52685a}.booking{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:start}.booking p{color:var(--muted)}form{background:white;border-radius:28px;padding:32px;box-shadow:0 15px 55px #1e3c2910}label{display:block;font-size:.87rem;font-weight:750;margin:0 0 7px}.field{margin-bottom:18px}input,select,textarea{width:100%;border:1px solid #dce3d9;background:#fcfdfb;border-radius:12px;padding:13px 14px;color:var(--ink)}input:focus,select:focus,textarea:focus{outline:2px solid #a5c5aa;outline-offset:1px}textarea{min-height:105px;resize:vertical}form .btn{width:100%}.status{font-size:.88rem;min-height:1.3em;margin:12px 0 0!important}.footer{border-top:1px solid #e3e5dc;padding:30px 0;color:var(--muted);font-size:.85rem}.footrow{display:flex;justify-content:space-between;gap:20px}.chat-launch{position:fixed;bottom:24px;right:24px;z-index:5;border:0;border-radius:100px;background:var(--green);color:white;box-shadow:0 12px 35px #153b2c35;padding:16px 22px;font-weight:800}.chat{position:fixed;bottom:88px;right:24px;width:min(370px,calc(100vw - 32px));height:470px;max-height:calc(100dvh - 115px);z-index:6;background:white;border:1px solid #e2e9df;box-shadow:0 20px 70px #153b2c35;border-radius:22px;display:none;flex-direction:column;overflow:hidden}.chat.open{display:flex}.chat-head{background:var(--green);color:white;padding:17px 20px;display:flex;justify-content:space-between;align-items:center}.chat-head button{background:transparent;color:white;border:0;font-size:1.5rem}.messages{flex:1;overflow:auto;padding:18px;display:flex;flex-direction:column;gap:12px}.msg{max-width:87%;background:#eef3e8;border-radius:16px;padding:11px 14px;font-size:.9rem;white-space:pre-wrap;overflow-wrap:anywhere}.msg.me{align-self:flex-end;background:#d7ebd6}.chat-form{padding:12px;border-top:1px solid #e8ece7;display:flex;gap:8px;box-shadow:none;border-radius:0}.chat-form input{flex:1;min-width:0}.chat-form button{border:0;border-radius:12px;background:var(--green);color:white;padding:0 15px;font-weight:750}@media(max-width:760px){.links a:not(.btn){display:none}.hero,.booking{grid-template-columns:1fr;gap:30px}.hero{padding:40px 0 60px}.art{min-height:320px}.cards,.steps{grid-template-columns:1fr}.section{padding:65px 0}.footrow{flex-direction:column}.booking form{padding:22px}}
-</style>
-</head>
-<body>
-<header class="wrap nav"><a href="#" class="logo">amigo<span>porperto.</span></a><nav class="links"><a href="#experiencias">Experiências</a><a href="#como-funciona">Como funciona</a><a href="#reservar" class="btn">Encontrar companhia</a></nav></header>
-<main>
-<section class="wrap hero"><div><span class="eyebrow">A vida é melhor acompanhada ☀️</span><h1>Um bom dia começa com <em>boa companhia.</em></h1><p>Um café, uma caminhada, uma conversa sem pressas. Encontra companhia para os pequenos grandes momentos da vida.</p><div class="actions"><a href="#reservar" class="btn">Quero conhecer alguém →</a><a href="#como-funciona" class="btn alt">Como funciona?</a></div><p class="note">💚 Companhia amigável, encontros combinados e zero julgamentos.</p></div><div class="art" aria-label="Ilustração de amigos a conversar"><span class="emoji" role="img" aria-label="Amigos">🧑‍🤝‍🧑</span><div class="bubble one">☕ Bora tomar um café?</div><div class="bubble two">✨ Conta comigo!</div></div></section>
-<section class="section wrap" id="experiencias"><span class="eyebrow">Momentos para partilhar</span><h2>O que te apetece fazer?</h2><p class="section-intro">Não precisas de uma ocasião especial para ter companhia. Escolhe o teu plano, nós ajudamos a encontrar a pessoa certa.</p><div class="cards"><article class="card"><div class="icon">☕</div><h3>Café & conversa</h3><p>Uma boa conversa, um chá ou um café e tempo para descontrair.</p></article><article class="card"><div class="icon">🌿</div><h3>Passeios & descobertas</h3><p>Explora a cidade, visita um museu ou vai dar uma caminhada.</p></article><article class="card"><div class="icon">🎲</div><h3>Planos & hobbies</h3><p>Jogos, cinema, eventos ou aquela atividade que queres experimentar.</p></article></div></section>
-<section class="section how" id="como-funciona"><div class="wrap"><span class="eyebrow">É simples assim</span><h2>Três passos. Novas histórias.</h2><div class="steps"><div class="step"><strong>01</strong><h3>Conta-nos o teu plano</h3><p>Escolhe a atividade e diz-nos quando gostavas de ter companhia.</p></div><div class="step"><strong>02</strong><h3>Encontramos uma combinação</h3><p>A nossa equipa ajuda a combinar interesses e disponibilidade.</p></div><div class="step"><strong>03</strong><h3>Aproveita o momento</h3><p>Encontram-se num local público e desfrutam de boa companhia.</p></div></div></div></section>
-<section class="section wrap booking" id="reservar"><div><span class="eyebrow">Vamos combinar?</span><h2>O teu próximo bom momento começa aqui.</h2><p>Preenche os dados e entraremos em contacto para combinar os detalhes.</p><p><small>Projeto fictício de demonstração. Não são efetuadas reservas reais.</small></p></div><form id="bookingForm"><div class="field"><label for="name">Como te chamas?</label><input id="name" name="name" autocomplete="name" maxlength="100" required placeholder="O teu nome"></div><div class="field"><label for="email">O teu email</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="nome@exemplo.com"></div><div class="field"><label for="activity">Que plano gostavas de fazer?</label><select id="activity" name="activity" required><option value="">Escolhe uma atividade</option><option>Café & conversa</option><option>Passeios & descobertas</option><option>Planos & hobbies</option><option>Outro</option></select></div><div class="field"><label for="message">Conta-nos mais (opcional)</label><textarea id="message" name="message" maxlength="1000" placeholder="Que tipo de companhia procuras?"></textarea></div><button class="btn" type="submit">Enviar pedido →</button><p class="status" id="bookingStatus" role="status" aria-live="polite"></p></form></section>
-</main>
-<footer class="footer"><div class="wrap footrow"><span>© <span id="year"></span> Amigo por Perto · Projeto fictício</span><span>Mais encontros. Mais sorrisos. 💚</span></div></footer>
-<button id="chatToggle" class="chat-launch" aria-controls="chatPanel" aria-expanded="false">💬 Precisas de ajuda?</button>
-<section id="chatPanel" class="chat" aria-label="Chat de apoio"><div class="chat-head"><strong>💚 Apoio Amigo por Perto</strong><button id="chatClose" aria-label="Fechar chat">×</button></div><div id="messages" class="messages" role="log" aria-live="polite"><div class="msg">Olá! 👋 Em que posso ajudar? O chat ficará disponível quando o serviço de apoio for ligado.</div></div><form id="chatForm" class="chat-form"><input id="chatInput" aria-label="Escreve a tua mensagem" placeholder="Escreve aqui..." required maxlength="2000"><button type="submit" aria-label="Enviar mensagem">➤</button></form></section>
-<script>
-// CONFIGURAÇÃO: substitui pelos URLs HTTPS dos teus serviços externos.
-// GitHub Pages é estático: os endpoints devem existir noutro serviço e permitir CORS.
-// Não coloques tokens secretos nem chaves de API neste ficheiro público.
-const CONFIG={bookingWebhook:"",chatEndpoint:""};
-const $=id=>document.getElementById(id);
-$("year").textContent=new Date().getFullYear();
-$("bookingForm").addEventListener("submit",async e=>{e.preventDefault();const status=$("bookingStatus");if(!CONFIG.bookingWebhook){status.textContent="Formulário de demonstração. Configura primeiro o webhook no ficheiro index.html.";return}const button=e.currentTarget.querySelector("button[type=submit]");button.disabled=true;status.textContent="A enviar...";try{const data=Object.fromEntries(new FormData(e.currentTarget));const res=await fetch(CONFIG.bookingWebhook,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(data)});if(!res.ok)throw Error("HTTP "+res.status);status.textContent="Pedido enviado com sucesso!";e.currentTarget.reset()}catch(err){status.textContent="Não foi possível enviar. Tenta novamente mais tarde.";console.error(err)}finally{button.disabled=false}});
-function toggleChat(open){$("chatPanel").classList.toggle("open",open);$("chatToggle").setAttribute("aria-expanded",String(open));if(open)$("chatInput").focus()}
-$("chatToggle").onclick=()=>toggleChat(!$("chatPanel").classList.contains("open"));$("chatClose").onclick=()=>toggleChat(false);
-function addMessage(text,me=false){const node=document.createElement("div");node.className="msg"+(me?" me":"");node.textContent=text;$("messages").append(node);$("messages").scrollTop=$("messages").scrollHeight;return node}
-$("chatForm").addEventListener("submit",async e=>{e.preventDefault();const input=$("chatInput"),message=input.value.trim();if(!message)return;addMessage(message,true);input.value="";if(!CONFIG.chatEndpoint){addMessage("O assistente RAG ainda não está ligado. Configura o endpoint de chat para ativar as respostas.");return}const button=e.currentTarget.querySelector("button");button.disabled=true;const pending=addMessage("A escrever...");try{const res=await fetch(CONFIG.chatEndpoint,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message})});if(!res.ok)throw Error("HTTP "+res.status);const data=await res.json();pending.textContent=typeof data.answer==="string"?data.answer:"Não recebi uma resposta válida."}catch(err){pending.textContent="Não consegui contactar o apoio. Tenta novamente.";console.error(err)}finally{button.disabled=false}});
-</script>
-</body></html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff9f1">
+    <meta name="description" content="Companhia à tua medida: encontra alguém para um café, passeio ou conversa.">
+    <title>Amigo por Perto — Boa companhia, sem complicações</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <header class="wrap nav">
+      <a href="#" class="logo" aria-label="Amigo por Perto — início">amigo<span>porperto.</span></a>
+      <nav class="links" aria-label="Navegação principal">
+        <a href="#experiencias">Experiências</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#reservar" class="btn">Encontrar companhia</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="wrap hero">
+        <div>
+          <span class="eyebrow">A vida é melhor acompanhada ☀️</span>
+          <h1>Um bom dia começa com <em>boa companhia.</em></h1>
+          <p>Um café, uma caminhada, uma conversa sem pressas. Encontra companhia para os pequenos grandes momentos da vida.</p>
+          <div class="actions">
+            <a href="#reservar" class="btn">Quero conhecer alguém →</a>
+            <a href="#como-funciona" class="btn alt">Como funciona?</a>
+          </div>
+          <p class="note">💚 Companhia amigável, encontros combinados e zero julgamentos.</p>
+        </div>
+        <div class="art">
+          <span class="emoji" role="img" aria-label="Amigos">🧑‍🤝‍🧑</span>
+          <div class="bubble one">☕ Bora tomar um café?</div>
+          <div class="bubble two">✨ Conta comigo!</div>
+        </div>
+      </section>
+
+      <section class="section wrap" id="experiencias">
+        <span class="eyebrow">Momentos para partilhar</span>
+        <h2>O que te apetece fazer?</h2>
+        <p class="section-intro">Não precisas de uma ocasião especial para ter companhia. Escolhe o teu plano, nós ajudamos a encontrar a pessoa certa.</p>
+        <div class="cards">
+          <article class="card">
+            <div class="icon" aria-hidden="true">☕</div>
+            <h3>Café &amp; conversa</h3>
+            <p>Uma boa conversa, um chá ou um café e tempo para descontrair.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">🌿</div>
+            <h3>Passeios &amp; descobertas</h3>
+            <p>Explora a cidade, visita um museu ou vai dar uma caminhada.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">🎲</div>
+            <h3>Planos &amp; hobbies</h3>
+            <p>Jogos, cinema, eventos ou aquela atividade que queres experimentar.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section how" id="como-funciona">
+        <div class="wrap">
+          <span class="eyebrow">É simples assim</span>
+          <h2>Três passos. Novas histórias.</h2>
+          <div class="steps">
+            <div class="step">
+              <strong>01</strong>
+              <h3>Conta-nos o teu plano</h3>
+              <p>Escolhe a atividade e diz-nos quando gostavas de ter companhia.</p>
+            </div>
+            <div class="step">
+              <strong>02</strong>
+              <h3>Encontramos uma combinação</h3>
+              <p>A nossa equipa ajuda a combinar interesses e disponibilidade.</p>
+            </div>
+            <div class="step">
+              <strong>03</strong>
+              <h3>Aproveita o momento</h3>
+              <p>Encontram-se num local público e desfrutam de boa companhia.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section wrap booking" id="reservar">
+        <div>
+          <span class="eyebrow">Vamos combinar?</span>
+          <h2>O teu próximo bom momento começa aqui.</h2>
+          <p>Preenche os dados e entraremos em contacto para combinar os detalhes.</p>
+          <p><small>Projeto fictício de demonstração. Não são efetuadas reservas reais.</small></p>
+        </div>
+        <form id="bookingForm">
+          <div class="field">
+            <label for="name">Como te chamas?</label>
+            <input id="name" name="name" autocomplete="name" maxlength="100" required placeholder="O teu nome">
+          </div>
+          <div class="field">
+            <label for="email">O teu email</label>
+            <input id="email" name="email" type="email" autocomplete="email" maxlength="254" required placeholder="nome@exemplo.com">
+          </div>
+          <div class="field">
+            <label for="activity">Que plano gostavas de fazer?</label>
+            <select id="activity" name="activity" required>
+              <option value="">Escolhe uma atividade</option>
+              <option>Café &amp; conversa</option>
+              <option>Passeios &amp; descobertas</option>
+              <option>Planos &amp; hobbies</option>
+              <option>Outro</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Conta-nos mais (opcional)</label>
+            <textarea id="message" name="message" maxlength="1000" placeholder="Que tipo de companhia procuras?"></textarea>
+          </div>
+          <button class="btn" type="submit">Enviar pedido →</button>
+          <p class="status" id="bookingStatus" role="status" aria-live="polite"></p>
+          <noscript><p>Ativa o JavaScript no navegador para utilizar o formulário e o chat.</p></noscript>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap footrow">
+        <span>© <span id="year">2026</span> Amigo por Perto · Projeto fictício</span>
+        <span>Mais encontros. Mais sorrisos. 💚</span>
+      </div>
+    </footer>
+
+    <button id="chatToggle" class="chat-launch" type="button" aria-controls="chatPanel" aria-expanded="false">
+      💬 Precisas de ajuda?
+    </button>
+    <section id="chatPanel" class="chat" aria-label="Chat de apoio">
+      <div class="chat-head">
+        <strong>💚 Apoio Amigo por Perto</strong>
+        <button id="chatClose" type="button" aria-label="Fechar chat">×</button>
+      </div>
+      <div id="messages" class="messages" role="log" aria-label="Mensagens de apoio" aria-live="polite" aria-relevant="additions text">
+        <div class="msg">Olá! 👋 Em que posso ajudar? O chat ficará disponível quando o serviço de apoio for ligado.</div>
+      </div>
+      <form id="chatForm" class="chat-form">
+        <input id="chatInput" aria-label="Escreve a tua mensagem" placeholder="Escreve aqui..." required maxlength="2000" autocomplete="off">
+        <button type="submit" aria-label="Enviar mensagem">➤</button>
+      </form>
+    </section>
+  </body>
+</html>
