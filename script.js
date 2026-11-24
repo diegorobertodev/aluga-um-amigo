@@ -6,7 +6,7 @@
 // Este ficheiro é público: não coloques aqui tokens ou chaves secretas.
 const CONFIG = {
   bookingWebhook: "",
-  chatEndpoint: ""
+  chatEndpoint: "https://diegoroberto.app.n8n.cloud/webhook/suporte-aluga-um-amigo"
 };
 
 const REQUEST_TIMEOUT_MS = 20000;
