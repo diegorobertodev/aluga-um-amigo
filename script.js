@@ -157,7 +157,17 @@ chatForm.addEventListener("submit", async (event) => {
     if (typeof answer !== "string" || !answer.trim()) {
       throw new Error("Resposta inválida do serviço de apoio.");
     }
-    pendingMessage.textContent = answer;
+    pendingMessage.replaceChildren();
+    const parts = answer.split(/(\*\*[^*]+\*\*)/g);
+    for (const part of parts) {
+      if (part.startsWith("**") && part.endsWith("**") && part.length > 4) {
+        const bold = document.createElement("strong");
+        bold.textContent = part.slice(2, -2);
+        pendingMessage.append(bold);
+      } else {
+        pendingMessage.append(document.createTextNode(part));
+      }
+    }
   } catch (error) {
     pendingMessage.textContent = error.name === "AbortError"
       ? "O apoio demorou demasiado a responder. Tenta novamente mais tarde."
