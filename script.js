@@ -1,7 +1,7 @@
 // Preenche os URLs HTTPS quando os teus serviços estiverem disponíveis.
 // O webhook recebe { name, email, role, activity, message }.
 // role identifica o papel escolhido; activity identifica a ocasião.
-// O chat recebe { message, sessionId } e deve devolver { answer: "texto da resposta" }.
+// O chat recebe { message, sessionId } e deve devolver { output: "texto da resposta" } ou { answer: "texto da resposta" }.
 // Os serviços devem permitir CORS para o domínio do site.
 // Este ficheiro é público: não coloques aqui tokens ou chaves secretas.
 const CONFIG = {
@@ -153,10 +153,11 @@ chatForm.addEventListener("submit", async (event) => {
 
   try {
     const data = await postJson(CONFIG.chatEndpoint, { message, sessionId }, true);
-    if (!data || typeof data.answer !== "string" || !data.answer.trim()) {
+    const answer = data?.output ?? data?.answer;
+    if (typeof answer !== "string" || !answer.trim()) {
       throw new Error("Resposta inválida do serviço de apoio.");
     }
-    pendingMessage.textContent = data.answer;
+    pendingMessage.textContent = answer;
   } catch (error) {
     pendingMessage.textContent = error.name === "AbortError"
       ? "O apoio demorou demasiado a responder. Tenta novamente mais tarde."
