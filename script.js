@@ -1,7 +1,7 @@
 // Preenche os URLs HTTPS quando os teus serviços estiverem disponíveis.
 // O webhook recebe { name, email, role, activity, message }.
 // role identifica o papel escolhido; activity identifica a ocasião.
-// O chat recebe { message } e deve devolver { answer: "texto da resposta" }.
+// O chat recebe { message, sessionId } e deve devolver { answer: "texto da resposta" }.
 // Os serviços devem permitir CORS para o domínio do site.
 // Este ficheiro é público: não coloques aqui tokens ou chaves secretas.
 const CONFIG = {
@@ -22,6 +22,12 @@ const chatButton = chatForm.querySelector('button[type="submit"]');
 const messages = document.getElementById("messages");
 let bookingPending = false;
 let chatPending = false;
+
+let sessionId = sessionStorage.getItem("lacosChatSessionId");
+if (!sessionId) {
+  sessionId = crypto.randomUUID();
+  sessionStorage.setItem("lacosChatSessionId", sessionId);
+}
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -146,7 +152,7 @@ chatForm.addEventListener("submit", async (event) => {
   const pendingMessage = addMessage("A escrever…");
 
   try {
-    const data = await postJson(CONFIG.chatEndpoint, { message }, true);
+    const data = await postJson(CONFIG.chatEndpoint, { message, sessionId }, true);
     if (!data || typeof data.answer !== "string" || !data.answer.trim()) {
       throw new Error("Resposta inválida do serviço de apoio.");
     }
